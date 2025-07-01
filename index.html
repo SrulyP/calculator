@@ -4,28 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <title>Calculator</title>
 </head>
 <body>
     <header><h1>Calculator</h1></header>
     <main>
         <div class="frame">
-            <div class="glass"></div>
-            <div class="buttons">
-                <ul class="numbers">
-                    <li><button class="number-button">9</button></li>
-                    <li><button class="number-button">8</button></li>
-                    <li><button class="number-button">7</button></li>
-                    <li><button class="number-button">6</button></li>
-                    <li><button class="number-button">5</button></li>
-                    <li><button class="number-button">4</button></li>
-                    <li><button class="number-button">3</button></li>
-                    <li><button class="number-button">2</button></li>
-                    <li><button class="number-button">1</button></li>
-                    <li><button class="number-button">0</button></li>
-
-                </ul>
+            
+            <div class="glass">
+                <div class="display"></div>
             </div>
+
+            <ul class="buttons">
+                <div class="row one">
+                    <li><button class="all-clear">AC</button></li>
+                    <li><button class="functional">CE</button></li>
+                </div>
+                <div class="row two">
+                    <li><button class="number">7</button></li>
+                    <li><button class="number">8</button></li>
+                    <li><button class="number">9</button></li>
+                    <li><button class="functional" id="division">&#247;</button></li>  <!-- division-->
+                </div>
+                <div class="row three">
+                    <li><button class="number">4</button></li>
+                    <li><button class="number">5</button></li>
+                    <li><button class="number">6</button></li>
+                    <li><button class="functional" id="multiplication">&#215;</button></li> <!-- multiplication-->
+
+                </div>
+                <div class="row four">
+                    <li><button class="number">1</button></li>
+                    <li><button class="number">2</button></li>
+                    <li><button class="number">3</button></li>
+                    <li><button class="functional" id="multiplication">&#8722;</button></li> <!-- subtraction-->
+                </div>
+                <div class="row five">
+                    <li><button class="functional">.</button></li>
+                    <li><button class="number">0</button></li>
+                    <li><button class="functional" id="equals">&#61;</button></li> <!-- equals -->
+                    <li><button class="functional" id="addition">&#43;</button></li> <!-- addition-->
+                </div>  
+            </ul>
+
         </div>
     </main>
 </body>
