@@ -1,17 +1,79 @@
+:root {
+    --dark-gray: #1a1a1a;
+    --gray: #282828;
+    --light-gray: #2f2f2f;
+    --green: #00FF33;
+    --light-green: #66FF66;
+    --amber: #FFB000;
+    --light-amber: #FFCC00;
+}
+
 body, html {
     display: flex;
     flex-direction: column;
     margin: 0;
     padding: 0;
-}
-
-ul {
-    list-style: none;
+    justify-self: center;
 }
 
 .frame {
     border: 2px solid black;
     padding: 20px;
-    width: 400px;
+    width: 330px;
+    height: 500px;
+    border-radius: 20px;
 
 }
+
+ul {
+    list-style: none;
+    /* border: 2px solid blue; */
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;       
+    justify-content: center;    
+    padding:20px 10px;
+    gap: 10px; 
+}
+
+button {
+    height: 65px;
+    width: 65px;
+    border-radius: 20px;
+    font-family: "Montserrat", serif;
+    font-size: large;
+    font-weight: 900;
+    color: var(--light-amber);
+    background-color: var(--gray);
+    box-shadow: 3px 3px rgb(0, 0, 0, 0.5);
+}
+
+button:hover {
+    background-color: var(--light-gray);
+    box-shadow: 3px 3px rgb(0, 0, 0, 0.6);
+}
+
+button:active {
+    background-color: var(--dark-gray);
+    box-shadow: none;
+}
+
+.row {
+    display: flex;
+    gap: 15px;
+}
+
+.row.one {
+    margin-left: 160px;
+}
+
+
+.glass {
+    border: solid 2px green;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 20px;
+    height: 70px;
+}
+
