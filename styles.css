@@ -8,12 +8,37 @@
     --light-amber: #FFCC00;
 }
 
-body, html {
+html, body {
     display: flex;
     flex-direction: column;
+    height: 100%;
     margin: 0;
     padding: 0;
-    justify-self: center;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    font-family: "Bitcount Grid Double", 'Courier New', Courier, monospace;
+    font-size: 20px;
+    background-color: var(--amber);
+    box-shadow: 6px 6px 6px rgb(0, 0, 0, 0.6);
+    height: 75px;
+}
+
+main {
+    padding: 10px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    background-color: var(--light-amber);
+}
+
+footer{
+    background-color: var(--light-amber);
+    font-family: "Montserrat", serif;
+    padding: 10px;
 }
 
 .frame {
@@ -22,19 +47,29 @@ body, html {
     width: 330px;
     height: 500px;
     border-radius: 20px;
+    background-color: var(--light-gray);
+    box-shadow: 6px 6px 6px rgb(0, 0, 0, 0.6);
+}
 
+.glass {
+    border: solid 2px rgb(0, 0, 0);
+    box-shadow: inset 2px 2px 2px rgb(0, 0, 0, 0.6);
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 20px;
+    height: 70px;
+    background-color: var(--light-green);
 }
 
 ul {
     list-style: none;
-    /* border: 2px solid blue; */
     height: 350px;
     display: flex;
     flex-direction: column;
-    align-items: center;       
-    justify-content: center;    
-    padding:20px 10px;
-    gap: 10px; 
+    align-items: center;
+    justify-content: center;
+    padding: 20px 10px;
+    gap: 10px;
 }
 
 button {
@@ -46,7 +81,7 @@ button {
     font-weight: 900;
     color: var(--light-amber);
     background-color: var(--gray);
-    box-shadow: 3px 3px rgb(0, 0, 0, 0.5);
+    box-shadow: 3px 3px rgb(0, 0, 0, 0.7);
 }
 
 button:hover {
@@ -66,14 +101,5 @@ button:active {
 
 .row.one {
     margin-left: 160px;
-}
-
-
-.glass {
-    border: solid 2px green;
-    border-radius: 5px;
-    padding: 5px;
-    margin-top: 20px;
-    height: 70px;
 }
 
