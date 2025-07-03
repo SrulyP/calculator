@@ -21,7 +21,6 @@ const display = document.querySelector(".display");
 let num1 = '';
 let num2 = '';
 let operator = '';
-let result = '';
 
 
 /* =========================== Setting Numbers =========================== */
@@ -43,18 +42,30 @@ numberButtons.forEach(btn => {
 /* =========================== Functional Operators =========================== */
 
 addition.addEventListener("click", () => {
+    if (num2 !== ''){
+        operate(operator, num1, num2);
+    }
     operator = '+';
 });
 
 subtraction.addEventListener("click", () => {
+    if (num2 !== ''){
+        operate(operator, num1, num2);
+    }
     operator = '-';
 });
 
 division.addEventListener("click", () => {
+    if (num2 !== ''){
+        operate(operator, num1, num2);
+    }
     operator = '/';
 });
 
 multiplication.addEventListener("click", () => {
+    if (num2 !== ''){
+        operate(operator, num1, num2);
+    }
     operator = '*';
 });
 
@@ -67,7 +78,6 @@ allClear.addEventListener("click", () => {
     num1 = '';
     num2 = '';
     operator = '';
-    result = '';
     clearScreen();      
 });
 
@@ -83,9 +93,9 @@ clearEntry.addEventListener("click", () => {
 
 /* ===========================  Operator Function =========================== */
 
-function operate(operator, num1, num2) {
-    let a = Number(num1);
-    let b = Number(num2);
+function operate(operator, firstNum, secondNum) {
+    let a = Number(firstNum);
+    let b = Number(secondNum);
     let result;
 
     switch (operator) {
