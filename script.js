@@ -171,9 +171,14 @@ function displayNum(num) {
     // if the string is less than 9 num, display
     if (numString.length <= 9) {
         display.textContent = numString;
-    // else, convert it into scientific notation
+    // else, rule out that it is a repeating decimal value e.g. (2.33333)
     } else {
-        display.textContent = Number(num).toExponential(1);
+        if (Math.abs(num) > 9999999999) {
+            display.textContent = Number(num).toExponential(1);
+        } else {
+            // if it is a repeating decimal, slice it
+            display.textContent = numString.slice(0, 10);
+        } 
     }
 }
 
