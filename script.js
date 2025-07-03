@@ -41,10 +41,14 @@ numberButtons.forEach(btn => {
 
 point.addEventListener("click", () => {
     if (!operator) {
-        num1 += '.';
+        if (!num1.includes('.')) {
+            num1 += '.';
+        }
         displayNum(num1);
     } else {
-        num2 += '.';
+        if (!num2.includes('.')) {
+            num2 += '.';
+        }
         displayNum(num2);
     }
 });
