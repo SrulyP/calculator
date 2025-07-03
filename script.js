@@ -12,6 +12,7 @@ const division = document.querySelector("#division");
 const equals = document.querySelector("#equals");
 const clearEntry = document.querySelector("#clearEntry");
 const allClear = document.querySelector("#allClear");
+const period = document.querySelector("#point");
 
 // ----- Display -----
 const display = document.querySelector(".display");
@@ -36,6 +37,16 @@ numberButtons.forEach(btn => {
         displayNum(num2);
         }
     });
+});
+
+point.addEventListener("click", () => {
+    if (!operator) {
+        num1 += '.';
+        displayNum(num1);
+    } else {
+        num2 += '.';
+        displayNum(num2);
+    }
 });
 
 
@@ -151,7 +162,14 @@ function clearScreen(){
     display.textContent = '';
 }
 
-function displayNum(num){
-    display.textContent = num;
+function displayNum(num) {
+    let numString = num.toString();
+    // if the string is less than 9 num, display
+    if (numString.length <= 9) {
+        display.textContent = numString;
+    // else, convert it into scientific notation
+    } else {
+        display.textContent = Number(num).toExponential(1);
+    }
 }
 
