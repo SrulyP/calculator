@@ -1,16 +1,8 @@
 /* =========================== Global Variables =========================== */
 
 // ----- Number Buttons -----
-const one = document.querySelector(".number_1");
-const two = document.querySelector(".number_2");
-const three = document.querySelector(".number_3");
-const four = document.querySelector(".number_4");
-const five = document.querySelector(".number_5");
-const six = document.querySelector(".number_6");
-const seven = document.querySelector(".number_7");
-const eight = document.querySelector(".number_8");
-const nine = document.querySelector(".number_9");
-const zero = document.querySelector(".number_0");
+const numberButtons = document.querySelectorAll(".number");
+
 
 // ----- Operator Buttons -----
 const subtraction = document.querySelector("#subtraction");
@@ -33,104 +25,18 @@ let result = '';
 
 
 /* =========================== Setting Numbers =========================== */
-one.addEventListener("click", () => {
-    if (operator == '') {
-        num1 += '1';
-        displayNum(num1);
-    } else {
-        num2 += '1';
-        displayNum(num2);
-    }
-});
 
-two.addEventListener("click", () => {
-    if (operator == '') {
-        num1 += '2';
+numberButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+    let val = btn.value;
+    if (!operator) {
+        num1 += val;
         displayNum(num1);
     } else {
-        num2 += '2';
+        num2 += val;
         displayNum(num2);
-    }
-});
-
-three.addEventListener("click", () => {
-    if (operator == '') {
-        num1 += '3';
-        displayNum(num1);
-    } else {
-        num2 += '3';
-        displayNum(num2);
-    }
-});
-
-four.addEventListener("click", () => {
-    if (operator == '') {
-        num1 += '4';
-        displayNum(num1);
-    } else {
-        num2 += '4';
-        displayNum(num2);
-    }
-});
-
-five.addEventListener("click", () => {
-    if (operator == '') {
-        num1 += '5';
-        displayNum(num1);
-    } else {
-        num2 += '5';
-        displayNum(num2);
-    }
-});
-
-six.addEventListener("click", () => {
-    if (operator == '') {
-        num1 += '6';
-        displayNum(num1);
-    } else {
-        num2 += '6';
-        displayNum(num2);
-    }
-});
-
-seven.addEventListener("click", () => {
-    if (operator == '') {
-        num1 += '7';
-        displayNum(num1);
-    } else {
-        num2 += '7';
-        displayNum(num2);
-    }
-});
-
-eight.addEventListener("click", () => {
-    if (operator == '') {
-        num1 += '8';
-        displayNum(num1);
-    } else {
-        num2 += '8';
-        displayNum(num2);
-    }
-});
-
-nine.addEventListener("click", () => {
-    if (operator == '') {
-        num1 += '9';
-        displayNum(num1);
-    } else {
-        num2 += '9';
-        displayNum(num2);
-    }
-});
-
-zero.addEventListener("click", () => {
-    if (operator == '') {
-        num1 += '0';
-        displayNum(num1);
-    } else {
-        num2 += '0';
-        displayNum(num2);
-    }
+        }
+    });
 });
 
 
@@ -154,6 +60,7 @@ multiplication.addEventListener("click", () => {
 
 equals.addEventListener("click", () => {
     operate(operator, num1, num2);
+    operator = '';
 });
 
 allClear.addEventListener("click", () => {
@@ -161,7 +68,7 @@ allClear.addEventListener("click", () => {
     num2 = '';
     operator = '';
     result = '';
-    displayNum('');      
+    clearScreen();      
 });
 
 clearEntry.addEventListener("click", () => {
