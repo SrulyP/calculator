@@ -17,15 +17,17 @@ const subtraction = document.querySelector("#subtraction");
 const addition = document.querySelector("#addition");
 const multiplication = document.querySelector("#multiplication");
 const division = document.querySelector("#division");
+const equals = document.querySelector("#equals");
 
 // ----- Display -----
 const display = document.querySelector(".display");
 
 // ----- Values -----
-let result = '';
+
 let num1 = '';
 let num2 = '';
 let operator = '';
+let result = '';
 
 
 /* =========================== Changing Operators =========================== */
@@ -46,22 +48,29 @@ multiplication.addEventListener("click", () => {
     operator = '*';
 });
 
+equals.addEventListener("click", () => {
+    operate(operator, num1, num2);
+});
+
+
+/* ===========================  Operator Function =========================== */
+
 function operate (operator, num1, num2){
     switch (operator) {
         case '+':
-            result = addition(num1, num2);
+            result = add(num1, num2);
             displayNum(result);
             break;
         case '-':
-            result = subtraction(num1, num2);
+            result = subtract(num1, num2);
             displayNum(result);
             break;
         case '/':
-            result = division(num1, num2);
+            result = divide(num1, num2);
             displayNum(result);
             break;
         case '*':
-            result = multiplication(num1, num2);
+            result = multiply(num1, num2);
             displayNum(result);
             break;
     }
@@ -70,15 +79,15 @@ function operate (operator, num1, num2){
 
 /* =========================== Math Functions =========================== */
 
-function addition(a, b){
+function add(a, b){
     return a + b
 }
 
-function subtraction(a, b){
+function subtract(a, b){
     return a - b
 }
 
-function division(a, b){
+function divide(a, b){
     if (b == 0){
         alert("Cannot divide by 0!");
         return a
@@ -86,7 +95,7 @@ function division(a, b){
     return a / b
 }
 
-function multiplication(a, b){
+function multiply(a, b){
     return a * b
 }
 
