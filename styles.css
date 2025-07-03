@@ -1,11 +1,14 @@
 :root {
-    --dark-gray: #1a1a1a;
     --gray: #282828;
     --light-gray: #2f2f2f;
+    --dark-gray: #1a1a1a;
     --green: #00FF33;
     --light-green: #66FF66;
+    --dark-green: #00d12a;
     --amber: #FFB000;
     --light-amber: #FFCC00;
+    --dark-amber: #755e00;
+    --very-dark-amber: #473c10;
 }
 
 html, body {
@@ -56,9 +59,18 @@ footer{
     box-shadow: inset 2px 2px 2px rgb(0, 0, 0, 0.6);
     border-radius: 5px;
     padding: 5px;
-    margin-top: 20px;
-    height: 70px;
+    margin-top: 10px;
+    height: 85px;
     background-color: var(--light-green);
+    align-content: center;
+}
+
+.display{
+    display: flex;
+    justify-content:flex-end;
+    align-items: center; 
+    font-family: "Orbitron", sans-serif;
+    font-size: 40px;
 }
 
 ul {
@@ -68,7 +80,7 @@ ul {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px 10px;
+    padding: 10px 10px 20px;
     gap: 10px;
 }
 
@@ -92,6 +104,20 @@ button:hover {
 button:active {
     background-color: var(--dark-gray);
     box-shadow: none;
+}
+
+.functional {
+    background-color: var(--dark-gray);
+} 
+
+.functional:hover {
+    background-color: var(--dark-amber);
+    box-shadow: 3px 3px rgb(0, 0, 0, 0.3);
+}
+
+.functional:active {
+    background-color: var(--very-dark-amber);
+
 }
 
 .row {
